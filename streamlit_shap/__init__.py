@@ -21,6 +21,8 @@ def st_shap(plot, height=None, width=None):
         The SHAP plot object.
     height: int or None
         The height of the plot in pixels.
+    width: int or None
+        The width of the plot in pixels.
 
     Returns
     -------
