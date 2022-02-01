@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="streamlit-shap",
-    version="0.0.2",
+    version="0.0.3",
     author="Snehan Kekre",
     author_email="snehan@streamlit.io",
     description="Streamlit component for SHAP",
