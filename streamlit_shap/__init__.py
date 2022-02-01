@@ -9,10 +9,10 @@ import base64
 from io import BytesIO
 
 
-def st_shap(plot, height=None):
+def st_shap(plot, height=None, width=None):
     """Takes a SHAP plot as input, and returns a streamlit.delta_generator.DeltaGenerator as output.
 
-    It is recommended to set the height and omit the width
+    It is recommended to set the height and width
     parameter to have the plot fit to the window.
 
     Parameters
@@ -82,7 +82,7 @@ def st_shap(plot, height=None):
     elif hasattr(plot, "html") or hasattr(plot, "data") or hasattr(plot, "matplotlib"):
 
         shap_html = f"<head>{shap.getjs()}</head><body>{plot.html()}</body>"
-        fig = components.html(shap_html, height=height)
+        fig = components.html(shap_html, height=height, width=width)
 
     else:
         fig = components.html(
