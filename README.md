@@ -4,7 +4,7 @@ This component provides a wrapper to display [SHAP](https://github.com/slundberg
 
 ### Installation
 
-`pip install git+https://github.com/snehankekre/streamlit-shap.git`
+`pip install git+https://github.com/snehankekre/streamlit-shap`
 
 
 ### Example
