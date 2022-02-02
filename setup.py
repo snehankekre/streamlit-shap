@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="streamlit-shap",
-    version="0.0.3",
+    version="0.0.4",
     author="Snehan Kekre",
     author_email="snehan@streamlit.io",
     description="Streamlit component for SHAP",
@@ -13,5 +13,5 @@ setuptools.setup(
     include_package_data=True,
     classifiers=[],
     python_requires=">=3.6",
-    install_requires=["streamlit >= 1.0.0", "shap >= 0.4.0"],
+    install_requires=["streamlit >= 1.0.0", "shap >= 0.4.0", "matplotlib >= 3.0.2, <= 3.4.3"],
 )
