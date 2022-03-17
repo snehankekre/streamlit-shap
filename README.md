@@ -8,7 +8,7 @@ First install Streamlit (of course!) then pip install this library:
 
 ```bash
 pip install streamlit
-pip install streamlit-shap`
+pip install streamlit-shap
 ```
 
 ### Example
