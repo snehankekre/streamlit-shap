@@ -4,8 +4,12 @@ This component provides a wrapper to display [SHAP](https://github.com/slundberg
 
 ### Installation
 
-`pip install git+https://github.com/snehankekre/streamlit-shap`
+First install Streamlit (of course!) then pip install this library:
 
+```bash
+pip install streamlit
+pip install streamlit-shap`
+```
 
 ### Example
 
@@ -36,7 +40,7 @@ def load_model(X, y):
         "subsample": 0.5,
         "base_score": np.mean(y_train),
         "eval_metric": "logloss",
-        "tree_method": "gpu_hist"
+        "n_jobs": -1,
     }
     model = xgboost.train(params, d_train, 10, evals = [(d_test, "test")], verbose_eval=100, early_stopping_rounds=20)
     return model
@@ -65,3 +69,8 @@ st_shap(shap.force_plot(explainer.expected_value, shap_values[:1000,:], X_displa
 ```
 
 ![st_shap](example.gif)
+
+
+#### Notes
+
+Colorbar changes in `matplotlib>3.4.3` introduced bugs ([#22625](https://github.com/matplotlib/matplotlib/issues/22625), [#22087](https://github.com/matplotlib/matplotlib/issues/22087)) that cause the colorbar of certain shap plots (e.g. `beeswarm`) to not display properly. If colorbars are not displayed properly, try downgrading `matplotlib` to `3.4.3`.
