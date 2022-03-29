@@ -5,7 +5,7 @@ with open("README.md", "r", encoding='utf8') as fh:
 
 setuptools.setup(
     name="streamlit-shap",
-    version="1.0.1",
+    version="1.0.2",
     author="Snehan Kekre",
     author_email="snehan@streamlit.io",
     description="Streamlit component for SHAP",
