@@ -2,6 +2,10 @@ import streamlit as st
 import streamlit.components.v1 as components
 import shap
 
+# Text plots return a IPython.core.display.HTML object
+# Set diplay=False to return HTML string instead
+shap.plots.text.__defaults__ = (0, 0.01, '', None, None, None, False)
+
 from matplotlib.figure import Figure
 import matplotlib.pyplot as plt
 
@@ -111,6 +115,10 @@ def st_shap(plot, height=None, width=None):
         shap_js = f"{shap.getjs()}".replace('height=350', f'height={height}').replace('width=100', f'width={width}')
         shap_html = f"<head>{shap_js}</head><body>{plot.html()}</body>"
         fig = components.html(shap_html, height=height, width=width)
+
+    # shap.plots.text plots have been overridden to return a string
+    elif isinstance(plot, str):
+        fig = components.html(plot, height=height, width=width)
 
     else:
         fig = components.html(
