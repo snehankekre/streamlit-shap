@@ -63,8 +63,8 @@ st_shap(shap.plots.beeswarm(shap_values), height=300)
 explainer = shap.TreeExplainer(model)
 shap_values = explainer.shap_values(X)
 
-st_shap(shap.force_plot(explainer.expected_value, shap_values[0,:], X_display.iloc[0,:]), height=200, width=1000)
-st_shap(shap.force_plot(explainer.expected_value, shap_values[:1000,:], X_display.iloc[:1000,:]), height=400, width=1000)
+st_shap(shap.force_plot(explainer.expected_value, shap_values.values[0,:], X_display.iloc[0,:]), height=200, width=1000)
+st_shap(shap.force_plot(explainer.expected_value, shap_values.values[:1000,:], X_display.iloc[:1000,:]), height=400, width=1000)
 
 ```
 
